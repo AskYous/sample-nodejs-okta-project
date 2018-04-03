@@ -44,17 +44,17 @@ Follow the steps below to create your own NodeJS app with integrated OKTA authen
             const MY_REDIRECT_URI = "YOUR_REDIRECT_URI";
 
             app.use(session({
-            secret: SESSION_SECRET,
-            resave: true,
-            saveUninitialized: false
+                secret: SESSION_SECRET,
+                resave: true,
+                saveUninitialized: false
             }));
 
             const oidc = new ExpressOIDC({
-            issuer: FLEX_OKTA_DOMAIN,
-            client_id: MY_FLEX_OKTA_CLIENT_ID,
-            client_secret: MY_FLEX_OKTA_CLIENT_SECRET,
-            redirect_uri: MY_REDIRECT_URI,
-            scope: 'openid profile'
+                issuer: FLEX_OKTA_DOMAIN,
+                client_id: MY_FLEX_OKTA_CLIENT_ID,
+                client_secret: MY_FLEX_OKTA_CLIENT_SECRET,
+                redirect_uri: MY_REDIRECT_URI,
+                scope: 'openid profile'
             });
 
             // ExpressOIDC will attach handlers for the /login and /authorization-code/callback routes
